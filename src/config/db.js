@@ -13,9 +13,9 @@ const pool = new Pool({
 // Test the connection when the app starts
 pool.connect((err, client, release) => {
   if (err) {
-    console.error('❌ Database connection failed:', err.message);
+    console.error(' Database connection failed:', err.message);
   } else {
-    console.log(`✅ Connected to database: ${config.db.name}`);
+    console.log( Connected to database: ${config.db.name}`);
     release(); // release the connection back to the pool
   }
 });
