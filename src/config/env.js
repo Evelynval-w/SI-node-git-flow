@@ -16,8 +16,7 @@ const required = [
   'DB_HOST',
   'DB_PORT',
   'DB_NAME',
-  'DB_USER',
-  'DB_PASSWORD'
+  'DB_USER'
 ];
 
 // Check each variable
@@ -31,7 +30,6 @@ if (missing.length > 0) {
 
 console.log(`Environment loaded: ${ENV}`);
 
-// Export clean config object for the rest of the app to use
 module.exports = {
   env: ENV,
   port: process.env.PORT,
@@ -40,6 +38,6 @@ module.exports = {
     port: process.env.DB_PORT,
     name: process.env.DB_NAME,
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD
+    password: process.env.DB_PASSWORD || '' // empty string if not set
   }
 };
